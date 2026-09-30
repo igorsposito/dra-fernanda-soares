@@ -5,16 +5,18 @@ import WhatsAppButton from '../components/WhatsAppButton/WhatsAppButton';
 import { Analytics } from '@vercel/analytics/react';
 
 const urbanist = Urbanist({
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-primary',
+  display: 'swap',
 });
 
 const playfair = Playfair_Display({
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'], 
   weight: ['400', '600'],
   style: ['italic'],
   variable: '--font-playfair',
+  display: 'swap',
 });
 
 export const metadata = {
