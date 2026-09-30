@@ -7,14 +7,15 @@ import { Analytics } from '@vercel/analytics/react';
 const urbanist = Urbanist({
   subsets: ['latin', 'latin-ext'],
   weight: ['300', '400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
   variable: '--font-primary',
   display: 'swap',
 });
 
 const playfair = Playfair_Display({
-  subsets: ['latin', 'latin-ext'], 
+  subsets: ['latin', 'latin-ext'],
   weight: ['400', '600'],
-  style: ['italic'],
+  style: ['normal', 'italic'],
   variable: '--font-playfair',
   display: 'swap',
 });
@@ -32,7 +33,7 @@ export const metadata = {
     title: 'Dra. Fernanda Soares | Tricologia Médica e Transplante Capilar',
     description:
       'Tratamentos capilares avançados, combate à queda de cabelo e transplante capilar em Montes Claros e Pirapora - MG.',
-    url: 'https://dra-fernanda-soares-beta.vercel.app/',
+    url: 'https://www.drafernandasoares.com.br',
     siteName: 'Dra. Fernanda Soares',
     images: [
       {
@@ -60,7 +61,7 @@ export default function RootLayout({ children }) {
       lang="pt-BR"
       className={`${urbanist.variable} ${playfair.variable}`}
     >
-      <body>
+      <body className={urbanist.className}>
         <SmoothScroll>
           {children}
           <WhatsAppButton />
