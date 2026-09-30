@@ -1,0 +1,24 @@
+:root {
+  /* Cores da paleta */
+  --color-primary-dark: #1D3A2C;
+  --color-primary-medium: #2C523F;
+  --color-bg-light: #F6F2EA;
+  --color-accent-gold: #C5A059;
+  --color-text-dark: #1F2421;
+  --color-text-muted: #5A655D;
+  --color-white: #FFFFFF;
+
+  /* Fontes: Century Gothic com fallback para Urbanist */
+  --font-heading: 'Century Gothic', CenturyGothic, AppleGothic, var(--font-primary), sans-serif;
+  --font-body: 'Century Gothic', CenturyGothic, AppleGothic, var(--font-primary), sans-serif;
+  --font-accent: var(--font-playfair), serif;
+
+  /* Pesos para variação fina / encorpada */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* Transições */
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}

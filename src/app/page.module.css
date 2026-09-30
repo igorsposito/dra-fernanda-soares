@@ -1,0 +1,24 @@
+.mainWrapper {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-bg-light);
+}
+
+.sectionDivider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(29, 58, 44, 0) 0%,
+    rgba(29, 58, 44, 0.1) 50%,
+    rgba(29, 58, 44, 0) 100%
+  );
+  margin: 0 auto;
+}
+
+/* Utilitário para conteúdos com efeito paralaxe mais marcado */
+.parallaxContainer {
+  position: relative;
+  will-change: transform;
+}

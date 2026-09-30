@@ -1,0 +1,121 @@
+.faq {
+  position: relative;
+  padding: 6rem 2rem;
+  background-color: var(--color-bg-light);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent-gold);
+  font-weight: 600;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  background-color: var(--color-white);
+  border-radius: 16px;
+  border: 1px solid rgba(29, 58, 44, 0.08);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.itemOpen {
+  border-color: rgba(197, 160, 89, 0.4);
+  box-shadow: 0 8px 24px rgba(29, 58, 44, 0.06);
+}
+.highlight {
+  font-family: var(--font-playfair);
+  font-style: italic;
+  color: #C5A059;
+}
+
+.questionButton {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  gap: 1rem;
+}
+
+.icon {
+  color: var(--color-accent-gold);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.iconRotated {
+  transform: rotate(180deg);
+}
+
+.answerWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden; /* Garante que nada transborde quando fechado */
+}
+
+.itemOpen .answerWrapper {
+  grid-template-rows: 1fr;
+}
+
+.answer {
+  min-height: 0; /* Impede que o conteúdo empurre o elemento quando fechado */
+  padding: 0 1.5rem 0 1.5rem; /* Sem padding vertical quando fechado */
+  opacity: 0;
+  transition: opacity 0.3s ease, padding 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Quando aberto, adiciona o padding e faz o fade in do texto */
+.itemOpen .answer {
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+  opacity: 1;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .questionButton {
+    font-size: 0.95rem;
+    padding: 1rem 1.25rem;
+  }
+}

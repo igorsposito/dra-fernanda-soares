@@ -1,0 +1,174 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.25rem 2rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Marca / Logotipo */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  height: 50px; /* Ajuste a altura conforme a proporção da logo */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF; /* Branco no topo */
+  transition: color 0.3s ease;
+}
+
+.subtitle {
+  font-size: 0.68rem;
+  color: var(--color-accent-gold); /* Dourado no topo */
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Links do Menu */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.85); /* Links claros no topo sobre o verde */
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-accent-gold);
+}
+
+/* Botão de Destaque no Header (Agendar Consulta) */
+.headerCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-accent-gold); /* Dourado chamativo */
+  color: var(--color-primary-dark); /* Texto escuro dentro do ouro */
+  padding: 0.65rem 1.3rem;
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35);
+  text-decoration: none;
+}
+
+.headerCta:hover {
+  background-color: #D8B268;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+}
+
+/* ===================================================
+   ESTADO ROLADO (WHEN SCROLLED - Fundo Claro)
+   =================================================== */
+.scrolled {
+  background-color: rgba(246, 242, 234, 0.95); /* Fundo marfim/claro com blur */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+/* Quando der scroll, adapta as cores para leitura sobre o fundo claro */
+.scrolled .title {
+  color: var(--color-primary-dark); /* Nome fica verde escuro */
+}
+
+.scrolled .subtitle {
+  color: #8C6F34; /* Dourado levemente mais escuro para alto contraste */
+}
+
+.scrolled .link {
+  color: var(--color-primary-dark); /* Links ficam escuros */
+}
+
+.scrolled .link:hover {
+  color: var(--color-accent-gold);
+}
+
+.scrolled .headerCta {
+  background-color: var(--color-primary-dark); /* Botão muda para verde escuro elegante */
+  color: var(--color-accent-gold); /* Texto em ouro */
+  box-shadow: 0 4px 15px rgba(29, 58, 44, 0.2);
+}
+
+.scrolled .headerCta:hover {
+  background-color: #12251C;
+  color: #F3E2B2;
+}
+
+/* Ajustes Mobile */
+@media (max-width: 992px) {
+  .nav {
+    display: none; /* No mobile entra o menu hambúrguer */
+  }
+
+  .header {
+    padding: 0.75rem 1rem;
+    align-items: center;
+  }
+
+  /* Mantém a logo em um tamanho legível */
+  .logo img,
+  .brand img {
+    height: 34px;
+    width: auto;
+  }
+
+  /* Reduz drasticamente a estrutura do botão de agendamento */
+  .headerBtn,
+  .ctaBtn,
+  .button {
+    padding: 0.3rem 0.5rem !important;
+    font-size: 0.55rem !important;
+    line-height: 1.1 !important;
+    gap: 0.2rem !important;
+    max-width: 95px !important; /* Trava a largura para o botão ficar pequenininho */
+    height: auto !important;
+    border-radius: 10px !important;
+  }
+
+  /* Reduz o ícone dentro do botão */
+  .headerBtn svg,
+  .ctaBtn svg,
+  .button svg {
+    width: 10px !important;
+    height: 10px !important;
+    min-width: 10px !important;
+  }
+}
