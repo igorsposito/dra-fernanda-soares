@@ -1,8 +1,7 @@
 @import '../styles/variables.css';
 
-/* Importação do Google Fonts: Plus Jakarta Sans + Playfair Display */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,600&display=swap');
-
+/* Importação correta: Urbanist + Playfair Display com suporte latino estendido */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Urbanist:ital,wght@0,300..800;1,300..800&display=swap');
 
 * {
   box-sizing: border-box;
@@ -18,7 +17,7 @@ html {
 body {
   background-color: var(--color-bg-light);
   color: var(--color-text-dark);
-  font-family: var(--font-body);
+  font-family: var(--font-primary), 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
 }
@@ -29,7 +28,6 @@ html, body {
   overflow-x: hidden;
   background-color: var(--color-primary-dark); /* Evita frestas de fundo claro */
 }
-
 
 a {
   color: inherit;
